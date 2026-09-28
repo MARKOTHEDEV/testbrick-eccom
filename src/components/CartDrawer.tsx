@@ -12,7 +12,10 @@ export function CartDrawer() {
   const toFree = FREE_SHIPPING_FROM - subtotal;
 
   return (
-    <div className={`fixed inset-0 z-50 ${open ? "" : "pointer-events-none"}`} aria-hidden={!open}>
+    <div
+      className={`fixed inset-0 z-50 ${open ? "visible" : "invisible pointer-events-none [transition:visibility_0s_300ms]"}`}
+      inert={!open}
+    >
       <div
         onClick={() => setOpen(false)}
         className={`absolute inset-0 bg-ink/40 transition-opacity ${open ? "opacity-100" : "opacity-0"}`}
